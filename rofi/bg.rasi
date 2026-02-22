@@ -1,0 +1,109 @@
+/**
+ * Catppuccin Mocha Mantle + Pywal Accents
+ * Fixed: No "Black Line" separator
+ */
+
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
+configuration {
+    modi: "window,drun,ssh";
+    combi-modi: "window,drun,ssh";
+    show-icons: true;
+    display-drun: " ";
+    display-window: " ";
+    display-ssh: " ";
+}
+
+* {
+    bg-col:         #181825;
+    bg-surface:     #313244;
+    fg-col:         @foreground;
+    accent:         @active-background; 
+    urgent:         @urgent-background;
+
+    background-color: transparent;
+    text-color:       @fg-col;
+    
+    font: "JetBrainsMono Nerd Font Propo 12";
+}
+
+window {
+    width: 700px;
+    background-color: @bg-col;
+    border: 3px;
+    border-color: @accent; 
+    border-radius: 12px;
+}
+
+mainbox {
+    padding: 20px;
+    children: [ inputbar, listview ];
+    /* Removed spacing to prevent gaps if that was the issue */
+    spacing: 10px; 
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    background-color: @bg-surface;
+    border: 2px;
+    border-color: @urgent; 
+    border-radius: 8px;
+    padding: 16px; 
+    margin: 0 0 10px 0;
+}
+
+prompt {
+    text-color: @accent;
+    margin: 0 16px 0 0;
+    font: "JetBrainsMono Nerd Font Propo 16";
+    vertical-align: 0.5;
+}
+
+entry {
+    text-color: @fg-col;
+    font: "JetBrainsMono Nerd Font Propo 14";
+    vertical-align: 0.5;
+    placeholder: "Search...";
+}
+
+listview {
+    lines: 7;
+    columns: 1;
+    fixed-height: false;
+    
+    /* FIX: Explicitly remove the border to kill the line */
+    border: 0px; 
+    spacing: 6px;
+}
+
+element {
+    padding: 14px 14px; 
+    border-radius: 8px;
+    spacing: 12px;
+}
+
+element-icon {
+    size: 28px;
+}
+
+element-text {
+    vertical-align: 0.5;
+    text-color: inherit;
+}
+
+/* 
+ * Stable Selection 
+ * (Removed the expanding size glitch, kept the colors) 
+ */
+element selected {
+    background-color: @accent;
+    text-color: @bg-col; /* Inverted text for readability */
+}
+
+element urgent {
+    text-color: @urgent;
+}
+
+element active {
+    text-color: @accent;
+}

@@ -1,0 +1,133 @@
+/* 1. Import the Pywal colors */
+@import "../../.cache/wal/colors-waybar.css";
+
+/* 2. MAPPING SECTION: Define Catppuccin names using Pywal colors */
+/* Background & Text */
+@define-color base      @background;
+@define-color text      @foreground;
+
+/* Surfaces: Created by mixing foreground into background for perfect contrast */
+/* shade() and alpha() allow us to make lighter 'layers' automatically */
+@define-color surface0  alpha(@foreground, 0.1);
+@define-color surface1  alpha(@foreground, 0.2);
+@define-color overlay0  alpha(@foreground, 0.4);
+
+/* Module Colors: Mapped to Pywal's generated palette (0-15) */
+@define-color red       @color1;
+@define-color green     @color2;
+@define-color yellow    @color3;
+@define-color sapphire  @color4;
+@define-color mauve     @color5;
+@define-color teal      @color6;
+@define-color sky       @color14;
+@define-color lavender  @color13;
+@define-color peach     @color11;
+
+/* ----------------------------------------------------- */
+/* Global Reset */
+* {
+    font-family: "JetBrainsMono Nerd Font", "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* The Bar Container */
+window#waybar {
+    /* Using alpha to let a bit of wallpaper show through */
+    background-color: transparent;
+    color: @text;
+    margin-bottom: 2px;
+}
+
+/* Base style for the 'pill' containers */
+.modules-left,
+.modules-center,
+.modules-right {
+    background-color: @base;
+    border: 1px solid @surface0;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+/* UNIVERSAL HOVER EFFECTS */
+#pulseaudio, #network, #bluetooth, #custom-media-title, #custom-power, #workspaces button, #battery, #clock, #backlight, #custom-nightmode, #custom-cliphist, #cpu, #memory {
+    transition: all 0.2s ease-in-out;
+}
+
+#pulseaudio:hover, #network:hover, #bluetooth:hover, #battery:hover, #clock:hover, #backlight:hover, #custom-nightmode:hover, #custom-cliphist:hover, #cpu:hover, #memory:hover, #custom-media-title:hover {
+    background-color: @surface0;
+    border-radius: 8px;
+}
+
+/* Media Player Styling */
+#custom-media-title {
+    color: @yellow; /* Mapped from @color3 */
+    background-color: @surface0;
+    border-radius: 10px;
+    padding: 0 12px;
+    margin: 2px 5px;
+}
+
+#custom-media-prev, #custom-media-play, #custom-media-next {
+    padding: 0 10px;
+    color: @text;
+}
+
+/* Modules */
+#custom-cliphist { color: @red; padding: 0 8px; }
+#backlight { color: @yellow; padding: 0 8px; }
+#custom-nightmode { color: @peach; padding: 0 8px; font-size: 14px; }
+#bluetooth { color: @sky; padding: 0 8px; }
+#pulseaudio { color: @sapphire; padding: 0 8px; }
+#network { color: @teal; padding: 0 8px; }
+#cpu { color: @green; padding: 0 8px; }
+#memory { color: @yellow; padding: 0 8px; }
+#clock { color: @lavender; padding: 0 8px; }
+#battery { color: #df8e1d; padding: 0 10px; }
+#battery.charging, #battery.plugged { color: #40a02b; }
+
+#custom-power {
+    color: @red;
+    padding-left: 10px;
+    padding-right: 16px;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+/* Workspaces */
+#workspaces button {
+    padding: 0 4px;
+    color: @overlay0;
+    background-color: transparent;
+}
+#workspaces button.active {
+    color: @mauve;
+}
+#workspaces button.urgent {
+    color: @red;
+}
+#workspaces button:hover {
+    background-color: @surface1;
+    color: @text;
+    border-radius: 8px;
+}
+
+#window { color: @text; }
+
+/* Tooltip Styling */
+tooltip {
+    background: @base;
+    border: 1px solid @mauve;
+    border-radius: 10px;
+}
+tooltip label {
+    color: @text;
+    padding: 8px;
+}

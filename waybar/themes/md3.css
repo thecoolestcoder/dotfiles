@@ -1,0 +1,280 @@
+/* 1. Import the Pywal colors */
+@import "../../.cache/wal/colors-waybar.css";
+
+/* 2. MATERIAL DESIGN 3 EXPRESSIVE - END-4 STYLE */
+@define-color base              @background;
+@define-color text              @foreground;
+
+/* M3 Surface with stronger presence */
+@define-color surface           alpha(@foreground, 0.08);
+@define-color surface-container alpha(@foreground, 0.14);
+@define-color surface-high      alpha(@foreground, 0.18);
+@define-color outline           alpha(@foreground, 0.25);
+@define-color outline-variant   alpha(@foreground, 0.15);
+
+/* M3 Color Roles */
+@define-color primary           @color4;
+@define-color secondary         @color5;
+@define-color tertiary          @color6;
+@define-color error             @color1;
+@define-color success           @color2;
+
+/* Semantic colors */
+@define-color red               @color1;
+@define-color green             @color2;
+@define-color yellow            @color3;
+@define-color blue              @color4;
+@define-color magenta           @color5;
+@define-color cyan              @color6;
+@define-color peach             @color11;
+@define-color lavender          @color13;
+@define-color sky               @color14;
+
+/* ----------------------------------------------------- */
+/* M3 Expressive Typography - Bold and Clear */
+* {
+    font-family: "Roboto Flex", "RobotoMono Nerd Font", "Symbols Nerd Font", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: @text;
+}
+
+/* M3 Surface Containers - No shadows */
+.modules-left,
+.modules-center,
+.modules-right {
+    background-color: alpha(@base, 0.85);
+    border: 2px solid @outline-variant;
+    padding: 4px 12px;
+    border-radius: 24px;
+    margin: 4px 12px;
+    min-height: 0;
+}
+
+/* Module Items - Tighter spacing */
+#pulseaudio, #network, #bluetooth, #battery, #clock,
+#backlight, #custom-nightmode, #custom-cliphist, #cpu, #memory,
+#custom-power, #custom-media-title {
+padding: 4px 10px;
+margin: 0px 2px;
+border-radius: 16px;
+min-height: 0;
+font-weight: 500;
+transition: all 250ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* M3 State Layer - More visible */
+#pulseaudio:hover, #network:hover, #bluetooth:hover, #battery:hover,
+#clock:hover, #backlight:hover, #custom-nightmode:hover,
+#custom-cliphist:hover, #cpu:hover, #memory:hover {
+background-color: alpha(@primary, 0.15);
+}
+
+/* Media Player */
+#custom-media-title {
+color: @text;
+background-color: alpha(@secondary, 0.25);
+padding: 4px 14px;
+margin: 0 4px;
+font-size: 13px;
+font-weight: 600;
+min-height: 0;
+}
+
+#custom-media-prev, #custom-media-play, #custom-media-next {
+padding: 4px 8px;
+margin: 0 2px;
+border-radius: 12px;
+min-height: 0;
+}
+
+#custom-media-prev:hover, #custom-media-play:hover, #custom-media-next:hover {
+background-color: @surface-container;
+}
+
+/* Modules - Vibrant M3 Colors */
+#custom-cliphist {
+color: @cyan;
+background-color: alpha(@cyan, 0.12);
+}
+
+#backlight {
+color: @yellow;
+background-color: alpha(@yellow, 0.12);
+}
+
+#custom-nightmode {
+color: @peach;
+background-color: alpha(@peach, 0.12);
+font-size: 15px;
+}
+
+#bluetooth {
+color: @sky;
+background-color: alpha(@sky, 0.12);
+}
+
+#pulseaudio {
+color: @blue;
+background-color: alpha(@blue, 0.14);
+}
+
+#network {
+color: @cyan;
+background-color: alpha(@cyan, 0.12);
+}
+
+#cpu {
+color: @green;
+background-color: alpha(@green, 0.12);
+}
+
+#memory {
+color: @magenta;
+background-color: alpha(@magenta, 0.12);
+}
+
+#clock {
+color: @lavender;
+background-color: alpha(@lavender, 0.14);
+font-weight: 600;
+padding: 4px 14px;
+font-size: 16px;
+}
+
+/* Battery */
+#battery {
+color: @yellow;
+background-color: alpha(@yellow, 0.12);
+}
+
+#battery.charging, #battery.plugged {
+color: @success;
+background-color: alpha(@success, 0.18);
+}
+
+@keyframes batteryPulse {
+    from { opacity: 1; }
+    to { opacity: 0.75; }
+}
+
+#battery.charging {
+animation: batteryPulse 2s ease-in-out infinite alternate;
+}
+
+/* Power */
+#custom-power {
+color: @error;
+background-color: alpha(@error, 0.15);
+font-size: 15px;
+padding: 4px 12px;
+margin-left: 4px;
+font-weight: 600;
+}
+
+#custom-power:hover {
+background-color: alpha(@error, 0.25);
+}
+
+/* Workspaces - With sliding animation */
+#workspaces {
+background-color: alpha(@surface, 0.8);
+border-radius: 18px;
+padding: 2px 4px;
+margin: 0 4px;
+}
+
+#workspaces button {
+padding: 2px 2px;
+margin: 1px 1px;
+color: alpha(@text, 0.60);
+background-color: transparent;
+border-radius: 12px;
+min-width: 16px;
+min-height: 0;
+font-weight: 500;
+transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Workspace active state with sliding animation */
+#workspaces button.active {
+color: @primary;
+background-color: alpha(@primary, 0.20);
+font-weight: 700;
+padding: 2px 10px;         /* Wider padding when active */
+min-width: 32px;           /* Wider when active */
+animation: workspaceSlide 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes workspaceSlide {
+    0% {
+        background-color: alpha(@primary, 0.08);
+        margin-left: -8px;
+        opacity: 0.5;
+    }
+    60% {
+        background-color: alpha(@primary, 0.25);
+        margin-left: 2px;
+    }
+    100% {
+        background-color: alpha(@primary, 0.20);
+        margin-left: 1px;
+        opacity: 1;
+    }
+}
+
+#workspaces button.urgent {
+color: @error;
+background-color: alpha(@error, 0.20);
+animation: workspaceUrgent 1s ease-in-out infinite;
+}
+
+@keyframes workspaceUrgent {
+    0% {
+        background-color: alpha(@error, 0.20);
+    }
+    50% {
+        background-color: alpha(@error, 0.30);
+    }
+    100% {
+        background-color: alpha(@error, 0.20);
+    }
+}
+
+#workspaces button:hover {
+background-color: alpha(@primary, 0.10);
+color: @text;
+}
+
+#window {
+color: @text;
+font-size: 14px;
+font-weight: 500;
+padding: 0 8px;
+min-height: 0;
+}
+
+/* M3 Tooltip - No shadow */
+tooltip {
+    background-color: alpha(@base, 0.98);
+    border: 2px solid @outline;
+    border-radius: 12px;
+    padding: 2px;
+}
+
+tooltip label {
+    color: @text;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    min-height: 0;
+}

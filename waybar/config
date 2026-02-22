@@ -1,0 +1,126 @@
+[
+    {
+        "output": ["HDMI-A-1", "eDP-1"],
+        "layer": "top",
+        "position": "top",
+        "height": 34,
+        "margin-top": 3,
+        "margin-left": 8,
+        "margin-right": 8,
+        "margin-bottom": 0,
+        "spacing": 5,
+
+        "modules-left": ["hyprland/workspaces", "group/media-drawer"],
+        "modules-center": ["hyprland/window"],
+        "modules-right": ["group/sys-drawer", "custom/cliphist", "clock", "custom/power"],
+
+        "group/media-drawer": {
+            "orientation": "horizontal",
+            "drawer": { "transition-duration": 500, "transition-left-to-right": true },
+            "modules": ["custom/media-title", "custom/media-prev", "custom/media-play", "custom/media-next"]
+        },
+
+        "group/sys-drawer": {
+            "orientation": "horizontal",
+            "drawer": { "transition-duration": 500, "transition-left-to-right": false },
+            "modules": [
+                "battery", 
+                "network", 
+                "pulseaudio", 
+                "backlight", 
+                "custom/nightmode", 
+                "bluetooth", 
+                "cpu", 
+                "memory"
+            ]
+        },
+
+        "custom/media-title": {
+            "format": "󰎆  {}",
+            "return-type": "json",
+            "escape": true,
+            "exec": "python3 /home/coolboi/.config/waybar/scripts/mediaplayer.py",
+            "interval": 1,
+            "on-click-right": "~/.config/waybar/scripts/rofi-media.sh"
+        },
+
+        "custom/media-play": {
+            "format": "{}",
+            "return-type": "json",
+            "exec": "playerctl metadata --format '{\"text\": \"{{status}}\"}' --follow 2>/dev/null | sed 's/Playing/󰏤/g;s/Paused/󰐊/g;s/Stopped/󰐊/g' --unbuffered",
+            "on-click": "playerctl play-pause"
+        },
+
+        "custom/media-prev": { "format": "󰒮", "on-click": "playerctl previous" },
+        "custom/media-next": { "format": "󰒭", "on-click": "playerctl next" },
+
+		"pulseaudio": {
+		    "format": " {icon}{volume}% ",
+		    "format-muted": "󰖁",
+		    "format-icons": {
+		        "headphone": "󰋋",
+		        "hands-free": "󰋎",
+		        "headset": "󰋎",
+		        "phone": "󰄜",
+		        "portable": "󰄜",
+		        "car": "󰄋",
+		        "default": ["󰖁", "󰖀", "󰕾"]
+		    },
+		    "on-click": "pavucontrol",
+		    "tooltip-format": "{desc}"
+		},
+
+        "bluetooth": {
+            "format": " 󰂯 ",
+            "format-connected": " 󰂱 ",
+            "on-click": "~/.config/waybar/scripts/rofi-bluetooth.sh",
+            "tooltip-format": "{status}"
+        },
+
+        "network": {
+            "format-wifi": " ",
+            "format-disconnected": "󰖪 ",
+            "format-disabled": "󰖪 ",
+            "on-click": "~/.config/waybar/scripts/rofi-network.sh",
+            "tooltip-format": "{essid} {signalStrength}%"
+        },
+
+        "battery": {
+            "format": " {icon} ",
+            "format-icons": ["", "", "", "", ""],
+            "on-click": "~/.config/waybar/scripts/rofi-battery.sh",
+            "tooltip-format": "{capacity}% - {timeTo}"
+        },
+
+        "backlight": { 
+            "format": " {icon} {percent}%",
+            "format-icons": ["󰃞", "󰃟", "󰃠"], 
+            "tooltip-format": "{percent}%" 
+        },
+
+        "clock": {
+            "format": "  {:%H:%M}",
+            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+            "on-click":"swaync-client -t"
+        },
+
+        "custom/cliphist": {
+            "return-type": "json",
+            "interval": 2,
+            "exec": "count=$(cliphist list | wc -l); echo \"{\\\"text\\\":\\\"󰅍\\\", \\\"tooltip\\\":\\\"$count items in clipboard\\\"}\"",
+            "on-click": "~/.config/rofi/rofi-clip.sh",
+            "on-click-right": "cliphist wipe"
+        },
+
+        "hyprland/workspaces": { "format": "{icon}" },
+        "hyprland/window": { "format": "{title}", "max-length": 30 },
+        "custom/nightmode": { 
+            "format": " 󱩌 ", 
+            "on-click": "pkill -x gammastep || gammastep -O 3500", 
+            "tooltip": false 
+        },
+        "cpu": { "format": " ", "tooltip-format": "CPU: {usage}%" },
+        "memory": { "format": "", "tooltip-format": "Mem: {used}GB" },
+        "custom/power": { "format": "", "on-click": "wlogout -b 5" }
+    }
+]

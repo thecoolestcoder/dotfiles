@@ -1,0 +1,226 @@
+/* 1. Import the Pywal colors */
+@import "../../.cache/wal/colors-waybar.css";
+
+/* 2. MINECRAFT COLOR PALETTE */
+/* Minecraft-inspired colors */
+@define-color base      #1d1c21; /* Dark stone/obsidian */
+@define-color text      #f9ffff; /* White text */
+
+/* Stone/wood surfaces */
+@define-color surface0  #474f52; /* Dark gray stone */
+@define-color surface1  #9c9d97; /* Light gray stone */
+@define-color overlay0  #825432; /* Oak wood brown */
+
+/* Minecraft block colors */
+@define-color red       #b02e26; /* Redstone */
+@define-color green     #80c71f; /* Lime/Slime */
+@define-color yellow    #ffd83d; /* Gold block */
+@define-color sapphire  #3ab3da; /* Diamond/Light blue */
+@define-color mauve     #c64fbd; /* Purpur block */
+@define-color teal      #169c9d; /* Prismarine */
+@define-color sky       #3ab3da; /* Sky blue */
+@define-color lavender  #f38caa; /* Light pink */
+@define-color peach     #f9801d; /* Orange terracotta */
+
+/* ----------------------------------------------------- */
+/* Global Reset - Minecraft pixel style */
+* {
+    font-family: "Minecraft", "Monocraft", "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0; /* NO CURVES - pure blocky */
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* The Bar Container */
+window#waybar {
+    background-color: transparent;
+    color: @text;
+    margin-bottom: 2px;
+}
+
+/* Base style for the 'pill' containers - now BLOCKY BOXES */
+.modules-left,
+.modules-center,
+.modules-right {
+    background-color: @base;
+    border: 3px solid #000000; /* Thick black borders like MC GUI */
+    box-shadow: inset -2px -2px 0px rgba(0,0,0,0.5),
+    inset 2px 2px 0px rgba(255,255,255,0.15); /* 3D depth effect */
+    padding: 3px 10px;
+    border-radius: 0; /* BLOCKY */
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+/* PIXELATED HOVER EFFECTS */
+#pulseaudio, #network, #bluetooth, #custom-media-title, #custom-power,
+#workspaces button, #battery, #clock, #backlight, #custom-nightmode,
+#custom-cliphist, #cpu, #memory {
+transition: none; /* NO smooth transitions - instant like MC */
+padding: 2px 8px;
+}
+
+#pulseaudio:hover, #network:hover, #bluetooth:hover, #battery:hover,
+#clock:hover, #backlight:hover, #custom-nightmode:hover,
+#custom-cliphist:hover, #cpu:hover, #memory:hover, #custom-media-title:hover {
+background-color: @surface0;
+border: 2px solid @surface1;
+box-shadow: inset -1px -1px 0px rgba(0,0,0,0.4),
+inset 1px 1px 0px rgba(255,255,255,0.2);
+border-radius: 0;
+
+}
+
+/* Media Player Styling - Gold button style */
+#custom-media-title {
+color: @base;
+background-color: @yellow;
+border: 2px solid #000000;
+box-shadow: inset -2px -2px 0px rgba(0,0,0,0.3),
+inset 2px 2px 0px rgba(255,255,255,0.3);
+border-radius: 0;
+padding: 2px 12px;
+margin: 2px 5px;
+text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+}
+
+#custom-media-prev, #custom-media-play, #custom-media-next {
+padding: 2px 10px;
+color: @text;
+text-shadow: 2px 2px 0px rgba(0,0,0,0.8); /* MC text shadow */
+}
+
+/* Modules - with MC color coding and text shadows */
+#custom-cliphist {
+color: @red;
+padding: 2px 8px;
+text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+}
+#backlight {
+color: @yellow;
+padding: 2px 8px;
+text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+}
+#custom-nightmode {
+color: @peach;
+padding: 2px 8px;
+font-size: 14px;
+text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+}
+#bluetooth {
+color: @sky;
+padding: 2px 8px;
+text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+}
+#pulseaudio {
+color: @sapphire;
+padding: 2px 8px;
+text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+}
+#network {
+color: @green;
+padding: 2px 8px;
+text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+}
+#cpu {
+color: @green;
+padding: 2px 8px;
+text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+}
+#memory {
+color: @yellow;
+padding: 2px 8px;
+text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+}
+#clock {
+color: @lavender;
+padding: 2px 8px;
+text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+}
+#battery {
+color: #ffd83d;
+padding: 2px 10px;
+text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+}
+#battery.charging, #battery.plugged {
+color: #80c71f; /* Slime green when charging */
+}
+
+#custom-power {
+color: @red;
+padding-left: 10px;
+padding-right: 16px;
+font-size: 15px;
+margin-left: 5px;
+text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+}
+#custom-power:hover {
+background-color: @red;
+color: @base;
+border: 2px solid #000000;
+}
+
+/* Workspaces - Hotbar style */
+#workspaces {
+background-color: @surface0;
+border: 2px solid #000000;
+box-shadow: inset -2px -2px 0px rgba(0,0,0,0.5),
+inset 2px 2px 0px rgba(255,255,255,0.1);
+padding: 2px;
+}
+
+#workspaces button {
+padding: 2px 6px;
+color: @surface1;
+background-color: transparent;
+border: 1px solid transparent;
+text-shadow: 1px 1px 0px rgba(0,0,0,0.8);
+min-width: 20px;
+}
+
+#workspaces button.active {
+color: @yellow;
+background-color: rgba(255, 216, 61, 0.2);
+border: 1px solid @yellow;
+box-shadow: 0px 0px 4px @yellow; /* Glowing effect like selected slot */
+}
+
+#workspaces button.urgent {
+color: @red;
+background-color: rgba(176, 46, 38, 0.3);
+animation: urgent-blink 0.5s steps(2) infinite;
+}
+
+@keyframes urgent-blink {
+    50% { opacity: 0.5; }
+}
+
+#workspaces button:hover {
+background-color: @surface1;
+color: @text;
+border: 1px solid @text;
+
+}
+
+#window {
+color: @text;
+text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+}
+
+/* Tooltip Styling - Minecraft inventory style */
+tooltip {
+    background: @base;
+    border: 3px solid #000000;
+    box-shadow: inset -2px -2px 0px rgba(0,0,0,0.5),
+    inset 2px 2px 0px rgba(255,255,255,0.15);
+    border-radius: 0;
+}
+tooltip label {
+    color: @text;
+    padding: 8px;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+}

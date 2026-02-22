@@ -1,0 +1,79 @@
+@import '../../.cache/wal/colors-waybar.css'; 
+
+* {
+    background-image: none;
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+}
+
+window {
+    background-color: alpha(@background, 0.85);
+}
+
+button {
+    /* Colors: using standard GTK functions */
+    color: lighter(@foreground);
+    background-color: alpha(@background, 0.5); 
+    border: 3px solid @color1;
+    border-radius: 20px;
+    margin: 20px;
+    
+    /* Background Icon Config */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    
+    /* SMOOTH LIQUID TRANSITION */
+    /* Less aggressive overshoot (1.5 instead of 2.5) for smoothness */
+    /* Longer duration (0.5s) to let the animation breathe */
+    transition: background-size 0.5s cubic-bezier(0.2, 0.8, 0.2, 1.5), 
+                margin 0.5s cubic-bezier(0.2, 0.8, 0.2, 1.5), 
+                background-color 0.3s ease;
+}
+
+button:focus {
+    background-color: alpha(@background, 0.5);
+    border-color: @color2;
+}
+
+button:hover {
+    background-color: @color1;
+    color: @background;
+    
+    /* Gentle pop (30% instead of 45%) */
+    background-size: 30%;
+    
+    /* Gentle expansion (10px instead of 5px) */
+    margin: 10px; 
+}
+
+button:active {
+    background-color: @color2;
+    background-size: 20%;
+    margin: 20px;
+    transition: all 0.1s ease;
+}
+
+/* Icons - Direct paths */
+#lock {
+    background-image: url("/usr/share/wlogout/icons/lock.png");
+}
+
+#logout {
+    background-image: url("/usr/share/wlogout/icons/logout.png");
+}
+
+#suspend {
+    background-image: url("/usr/share/wlogout/icons/suspend.png");
+}
+
+#hibernate {
+    background-image: url("/usr/share/wlogout/icons/hibernate.png");
+}
+
+#shutdown {
+    background-image: url("/usr/share/wlogout/icons/shutdown.png");
+}
+
+#reboot {
+    background-image: url("/usr/share/wlogout/icons/reboot.png");
+}

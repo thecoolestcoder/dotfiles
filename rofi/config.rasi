@@ -1,0 +1,23 @@
+configuration {
+/* Define the modes available */
+    modi: "drun,aioro:~/.config/rofi/AIOrofi.sh,calc";
+    
+    /* Set the default view to 'combi' which merges drun and your script */
+    show: "combi";
+    combi-modi: "drun,aioro";    
+    /* UI Settings */
+    show-icons: true;
+    display-finder: "";
+    display-calc: "";
+    display-drun: "󰀻";
+
+    /* Speed Optimizations for Real-time */
+    terminal: "kitty";
+    drun-display-format: "{name}";
+
+    /* This ensures it behaves like KRunner */
+    fixed-num-lines: true;
+    sidebar-mode: false;
+}
+
+@theme "~/.config/rofi/bg.rasi"
