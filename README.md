@@ -145,13 +145,9 @@ Utility scripts for various functions like capslock, osd for volume etc
 
 ## 🖼️ Screenshots
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ae23cbb5-764a-4d0f-9e2e-7ca9ef176e46" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b31b9ee6-a2e6-420c-84dd-9961234d4869" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b430a6f3-9cbb-4a4b-8007-b7cb5d4758f0" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0cbde9e9-5ba2-450c-906e-efa494474ecc" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8c6e9180-2f3e-4997-97b4-0919e5f909ee" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/acda2318-6f0b-463a-9eac-628719eab5cc" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7e952de9-9715-4ec1-b5c6-9dd709a49ad1" />
+| ![Desktop 1](https://github.com/user-attachments/assets/ae23cbb5-764a-4d0f-9e2e-7ca9ef176e46) | ![Desktop 2](https://github.com/user-attachments/assets/b31b9ee6-a2e6-420c-84dd-9961234d4869) | ![Desktop 3](https://github.com/user-attachments/assets/b430a6f3-9cbb-4a4b-8007-b7cb5d4758f0) |
+|-------------------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------|
+| ![Desktop 4](https://github.com/user-attachments/assets/0cbde9e9-5ba2-450c-906e-efa494474ecc) | ![Desktop 5](https://github.com/user-attachments/assets/8c6e9180-2f3e-4997-97b4-0919e5f909ee) | ![Desktop 6](https://github.com/user-attachments/assets/acda2318-6f0b-463a-9eac-628719eab5cc) |
 
 
 ## 💡 Tips
