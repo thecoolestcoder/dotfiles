@@ -1,0 +1,125 @@
+# ~/.config/yazi/keymap.toml
+# "Dolphin-like" keybindings for common actions
+
+[mgr]
+prepend_keymap = [
+  # --- Navigation: open / go up / back / forward ---
+
+  # Enter folder / open file (same as Dolphin)
+  { on = "<Enter>", run = "open", desc = "Open selected file or enter folder" },
+
+  # Go up (Dolphin: Alt+Up)
+  { on = "<A-Up>", run = "cd ..", desc = "Go to parent directory" },
+
+  # Back / forward in history (Dolphin: Alt+Left / Alt+Right)
+  { on = "<A-Left>",  run = "back",    desc = "Go back in history" },
+  { on = "<A-Right>", run = "forward", desc = "Go forward in history" },
+
+  # Home (Dolphin: Alt+Home)
+  { on = "<A-Home>", run = "cd ~", desc = "Go to home directory" },
+
+  # Reload (Dolphin: F5)
+  { on = "<F5>", run = "reload", desc = "Reload directory" },
+
+
+  # --- Tabs (Dolphin‑style) ---
+
+  # New tab (Dolphin: Ctrl+T)
+  { on = "<C-t>", run = "tab_create", desc = "Open new tab" },
+
+  # Close tab (Dolphin: Ctrl+W)
+  { on = "<C-w>", run = "tab_close", desc = "Close current tab" },
+
+  # Next / previous tab (Dolphin: Ctrl+Tab / Ctrl+Shift+Tab)
+  { on = "<C-Tab>",    run = "tab_next", desc = "Next tab" },
+  { on = "<C-S-Tab>",  run = "tab_prev", desc = "Previous tab" },
+
+  # Direct tab switching with numbers (like many GUI apps)
+  { on = "<A-1>", run = "tab_switch 1", desc = "Switch to tab 1" },
+  { on = "<A-2>", run = "tab_switch 2", desc = "Switch to tab 2" },
+  { on = "<A-3>", run = "tab_switch 3", desc = "Switch to tab 3" },
+  { on = "<A-4>", run = "tab_switch 4", desc = "Switch to tab 4" },
+  { on = "<A-5>", run = "tab_switch 5", desc = "Switch to tab 5" },
+
+
+  # --- Split view (Dolphin: F3) ---
+
+  # Toggle split view
+  { on = "<F3>", run = "split", desc = "Toggle split view" },
+
+  # Focus other pane (no direct Dolphin default; this is like F6)
+  { on = "<F6>", run = "split_focus", desc = "Focus other pane" },
+
+
+  # --- Selection (Dolphin‑like; Shift/Control) ---
+
+  # Toggle selection of current item (Dolphin: Ctrl+Space)
+  { on = "<C-Space>", run = "select --toggle", desc = "Toggle selection" },
+
+  # Clear selection (Dolphin: Ctrl+Shift+A is 'unselect all' by default)
+  { on = "<C-S-A>", run = "select --none", desc = "Clear selection" },
+
+  # Select all (Dolphin: Ctrl+A)
+  { on = "<C-a>", run = "select --all", desc = "Select all" },
+
+  # Inverse selection (Dolphin: Ctrl+Shift+I)
+  { on = "<C-S-I>", run = "select --invert", desc = "Invert selection" },
+
+
+  # --- File operations (copy, move, delete, rename, new folder) ---
+
+  # Copy (Dolphin: Ctrl+C)
+  { on = "<C-c>", run = "yank", desc = "Copy (yank) selected files" },
+
+  # Cut (Dolphin: Ctrl+X)
+  { on = "<C-x>", run = "yank --cut", desc = "Cut selected files" },
+
+  # Paste (Dolphin: Ctrl+V)
+  { on = "<C-v>", run = "paste", desc = "Paste yanked files" },
+
+  # Delete (Dolphin: Del)
+  { on = "<Delete>", run = "remove", desc = "Delete selected files" },
+
+  # Rename (Dolphin: F2)
+  { on = "<F2>", run = "rename --cursor=all", desc = "Rename selected file" },
+
+  # New folder (Dolphin: F10)
+  { on = "<F10>", run = "mkdir", desc = "Create new directory" },
+
+
+  # --- View / sorting / hidden files ---
+
+  # Toggle hidden files (Dolphin: Ctrl+H)
+  { on = "<C-h>", run = "hidden", desc = "Toggle hidden files" },
+
+  # Sort by name (Dolphin uses toolbar, but give it a shortcut)
+  { on = "<A-n>", run = "sort name", desc = "Sort by name" },
+
+  # Sort by size
+  { on = "<A-s>", run = "sort size", desc = "Sort by size" },
+
+  # Sort by modification time
+  { on = "<A-m>", run = "sort mtime", desc = "Sort by modification time" },
+
+
+  # --- Search / filter (like Dolphin's Ctrl+F filter bar) ---
+
+  # Search (Dolphin: Ctrl+F)
+  { on = "<C-f>", run = "search --via=fd", desc = "Search files by name" },
+
+  # Content search (no exact Dolphin default; optional)
+  { on = "<C-S-f>", run = "search --via=rg", desc = "Search files by content" },
+
+
+  # --- Misc (properties, terminal, quit) ---
+
+  # File properties dialog (Dolphin: Alt+Return)
+  { on = "<A-Return>", run = "shell 'yazi-meta %p1'", desc = "Open metadata helper (custom)" },
+
+  # Open shell in current directory (Dolphin: F4)
+  { on = "<F4>", run = "shell --block $SHELL", desc = "Open shell in current directory" },
+
+  # Quit (Dolphin: Ctrl+Q)
+  { on = "<C-q>", run = "quit", desc = "Quit Yazi" }
+]
+
