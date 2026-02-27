@@ -123,7 +123,11 @@ Custom keybindings are defined in `hypr/hyprland.conf`. Key highlights:
 - `Alt + Space` - Application launcher
 - `Super + Q` - Close window
 - `Super + B` - Exit/logout menu
-
+- `Super + Space` - All in One Rofi menu
+- `Super + Shift + W` - Change to random wallpaper
+- `Super + W` - Launch Browser
+- `Super + E` - Launch File Explorer
+- `Super + Shift + O` - Launch FZF file search.
 ## 🔧 Scripts
 
 ### Hyprland Scripts (`hypr/scripts/`)
@@ -162,7 +166,7 @@ Free to use and modify as you wish.
 ## 🙏 Acknowledgments
 
 - [Hyprland](https://hyprland.org) - Amazing Wayland compositor
-- [r/unixporn](https://reddit.com/r/unixporn) - Inspiration and ideas
+- [r/unix**](https://reddit.com/r/unixporn) - Inspiration and ideas
 - The Linux ricing community
 
 ---
