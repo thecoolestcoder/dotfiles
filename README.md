@@ -113,6 +113,7 @@ wal -i ~/dotfiles/mybgs/your-wallpaper.png
 ### Themes
 
 Multiple Hyprland themes are available in `hypr/themes/`. Edit `hypr/hyprland.conf` to source your preferred theme.
+You can also change you Waybar theme by `Super + Ctrl + T`
 
 ### Monitors
 
@@ -150,6 +151,7 @@ Utility scripts for various functions like capslock, osd for volume etc
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0cbde9e9-5ba2-450c-906e-efa494474ecc" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8c6e9180-2f3e-4997-97b4-0919e5f909ee" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/acda2318-6f0b-463a-9eac-628719eab5cc" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7e952de9-9715-4ec1-b5c6-9dd709a49ad1" />
 
 
 ## 💡 Tips
