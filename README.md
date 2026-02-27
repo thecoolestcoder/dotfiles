@@ -44,6 +44,7 @@ My personal Hyprland configuration files for Arch Linux. A carefully crafted set
 ├── waybar/        # Status bar config
 ├── waypaper/      # Wallpaper manager config
 ├── wlogout/       # Logout menu config
+├── yazi/          # Yazi Terminal File Browser  
 └── starship.toml  # Shell prompt config
 └── .bashrc        # Bash shell configuration
 ```
@@ -55,7 +56,7 @@ My personal Hyprland configuration files for Arch Linux. A carefully crafted set
 Ensure you have these packages installed:
 
 ```bash
-sudo pacman -S hyprland waybar kitty rofi swaync wlogout hyprlock hypridle \
+yay -S hyprland waybar kitty rofi swaync wlogout hyprlock hypridle \
                waypaper python-pywal16 cava fastfetch starship fzf yazi zoxide
 ```
 
@@ -66,7 +67,7 @@ sudo pacman -S hyprland waybar kitty rofi swaync wlogout hyprlock hypridle \
 git clone https://github.com/thecoolestcoder/dotfiles.git ~/dotfiles
 ```
 
-2. **Backup existing configs** (if any)
+2. **Backup existing configs** (if any, please feel free to edit this, it's YOUR backup)
 ```bash
 mkdir -p ~/.config/backup
 cp -r ~/.config/{hypr,waybar,kitty,rofi,swaync} ~/.config/backup/
@@ -86,6 +87,7 @@ ln -sf ~/dotfiles/wal ~/.config/
 ln -sf ~/dotfiles/waypaper ~/.config/
 ln -sf ~/dotfiles/wlogout ~/.config/
 ln -sf ~/dotfiles/starship.toml ~/.config/
+ln -sf ~/dotfiles/yazi ~/.config/
 ln -sf ~/dotfiles/.bashrc ~/.bashrc
 ```
 
@@ -143,6 +145,11 @@ Utility scripts for various functions like capslock, osd for volume etc
 ## 🖼️ Screenshots
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ae23cbb5-764a-4d0f-9e2e-7ca9ef176e46" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b31b9ee6-a2e6-420c-84dd-9961234d4869" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b430a6f3-9cbb-4a4b-8007-b7cb5d4758f0" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0cbde9e9-5ba2-450c-906e-efa494474ecc" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8c6e9180-2f3e-4997-97b4-0919e5f909ee" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/acda2318-6f0b-463a-9eac-628719eab5cc" />
 
 
 ## 💡 Tips
