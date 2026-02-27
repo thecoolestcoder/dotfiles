@@ -1,0 +1,77 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "ignore-gtk-theme": true,
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "top",
+  "cssPriority": "user",
+  "control-center-width": 400,
+  "control-center-height": 620,
+  "control-center-margin-top": 10,
+  "control-center-margin-bottom": 10,
+  "control-center-margin-right": 10,
+  "control-center-margin-left": 10,
+  "notification-window-width": 450,
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": true,
+  "keyboard-shortcuts": true,
+  "backwards-compatibility-keyboard": true,
+  "notification-visibility": {
+    "volume-osd": {
+      "state": "show",
+      "override-urgency": true
+    }
+  },
+  "widgets": [
+    "buttons-grid",
+    "mpris",
+    "volume",
+    "backlight",
+    "title",
+    "dnd",
+    "notifications"
+  ],
+  "widget-config": {
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": "Clear All"
+    },
+    "dnd": {
+      "text": "Do Not Disturb"
+    },
+    "mpris": {
+      "image-size": 96,
+      "image-radius": 12
+    },
+    "volume": {
+      "label": "󰕾"
+    },
+    "backlight": {
+      "label": "󰃠"
+    },
+  "buttons-grid": {
+    "buttons-per-row": 3,
+    "actions": [
+      {
+		"label": "󱡺 󰦑󰦑 ",      
+        "type": "toggle",
+        "command": "/home/coolboi/.config/swaync/scripts/airplane_mode.sh",
+        "update-command": "sh -c 'if nmcli radio wifi | grep -q \"enabled\"; then echo \"{\\\"label\\\": \\\" \\\", \\\"active\\\": false}\"; else echo \"{\\\"label\\\": \\\"󰑐\\\", \\\"active\\\": true}\"; fi'"
+      },
+      {
+        "label": "󰊖",
+        "type": "toggle",
+        "command": "/home/coolboi/.config/swaync/scripts/toggle-gamemode.sh",
+        "update-command": "sh -c '[ -f /home/coolboi/.config/swaync/scripts/.gamemode_active ] && echo true || echo false'"
+      },
+      {
+        "label": "",
+        "command": "wlogout -b 5"
+      }
+    ]
+  }
+  }
+}
