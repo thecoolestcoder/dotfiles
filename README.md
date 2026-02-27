@@ -1,4 +1,4 @@
-# 🌟 Dotfiles
+# 😎 Coolboi-Dots
 
 My personal Hyprland configuration files for Arch Linux. A carefully crafted setup focused on aesthetics, functionality, and workflow optimization.
 
@@ -55,7 +55,7 @@ Ensure you have these packages installed:
 
 ```bash
 sudo pacman -S hyprland waybar kitty rofi swaync wlogout hyprlock hypridle \
-               waypaper python-pywal cava fastfetch starship
+               waypaper python-pywal cava fastfetch starship fzf yazi
 ```
 
 ### Setup
@@ -120,14 +120,14 @@ monitor=eDP-1,1920x1080@60,0x0,1
 
 Custom keybindings are defined in `hypr/hyprland.conf`. Key highlights:
 - `Super + Return` - Launch terminal
-- `Super + D` - Application launcher
+- `Alt + Space` - Application launcher
 - `Super + Q` - Close window
-- `Super + M` - Exit/logout menu
+- `Super + B` - Exit/logout menu
 
 ## 🔧 Scripts
 
 ### Hyprland Scripts (`hypr/scripts/`)
-Utility scripts for various functions like screenshot, screen recording, and more.
+Utility scripts for various functions like capslock, osd for volume etc
 
 ### SwayNC Scripts (`swaync/scripts/`)
 - `airplane_mode.sh` - Toggle airplane mode
@@ -135,7 +135,8 @@ Utility scripts for various functions like screenshot, screen recording, and mor
 
 ## 🖼️ Screenshots
 
-_Add screenshots of your setup here_
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ae23cbb5-764a-4d0f-9e2e-7ca9ef176e46" />
+
 
 ## 💡 Tips
 
