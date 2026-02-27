@@ -45,6 +45,7 @@ My personal Hyprland configuration files for Arch Linux. A carefully crafted set
 ├── waypaper/      # Wallpaper manager config
 ├── wlogout/       # Logout menu config
 └── starship.toml  # Shell prompt config
+└── .bashrc        # Bash shell configuration
 ```
 
 ## 🚀 Installation
@@ -55,7 +56,7 @@ Ensure you have these packages installed:
 
 ```bash
 sudo pacman -S hyprland waybar kitty rofi swaync wlogout hyprlock hypridle \
-               waypaper python-pywal cava fastfetch starship fzf yazi
+               waypaper python-pywal16 cava fastfetch starship fzf yazi zoxide
 ```
 
 ### Setup
@@ -85,12 +86,14 @@ ln -sf ~/dotfiles/wal ~/.config/
 ln -sf ~/dotfiles/waypaper ~/.config/
 ln -sf ~/dotfiles/wlogout ~/.config/
 ln -sf ~/dotfiles/starship.toml ~/.config/
+ln -sf ~/dotfiles/.bashrc ~/.bashrc
 ```
 
 4. **Make scripts executable**
 ```bash
 chmod +x ~/dotfiles/hypr/scripts/*
 chmod +x ~/dotfiles/swaync/scripts/*
+chmod +x ~/dotfiles/waybar/scripts/*
 ```
 
 5. **Reload Hyprland**
