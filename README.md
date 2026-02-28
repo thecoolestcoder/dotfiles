@@ -57,7 +57,7 @@ Ensure you have these packages installed:
 
 ```bash
 yay -S hyprland waybar kitty rofi swaync wlogout hyprlock hypridle \
-               waypaper python-pywal16 cava fastfetch starship fzf yazi zoxide
+               waypaper python-pywal16 cava fastfetch starship fzf yazi zoxide fd bc power-profiles-daemon
 ```
 
 ### Setup
