@@ -78,7 +78,8 @@ PACKAGES=(
     fzf yazi zoxide fd bc power-profiles-daemon
     swww ttf-jetbrains-mono-nerd bibata-cursor-theme
     ttf-roboto ttf-roboto-mono-nerd ttf-nerd-fonts-symbols
-    apple-fonts ttf-minecraft monocraft
+    otf-apple-sf-pro-fixed minecraft-ttf-git
+    gnome-font-viewer nwg-displays nwg-look
 )
 
 if confirm "Install all required packages?"; then
@@ -242,10 +243,13 @@ echo ""
 echo -e "  ${BOLD}Next steps:${NC}"
 echo -e "  ${CYAN}•${NC} Reload Hyprland:       ${BOLD}Super + Shift + R${NC}"
 echo -e "  ${CYAN}•${NC} Change wallpaper:      ${BOLD}Super + Shift + W${NC} (random) or ${BOLD}Super + Ctrl + W${NC} (picker)"
+echo -e "  ${CYAN}•${NC} Configure displays:    ${BOLD}nwg-displays${NC}"
+echo -e "  ${CYAN}•${NC} Configure GTK theme:   ${BOLD}nwg-look${NC}"
 echo -e "  ${CYAN}•${NC} Edit monitor config:   ${BOLD}~/.config/hypr/monitors.conf${NC}"
 echo ""
 echo -e "  ${YELLOW}${BOLD}  Manual step required:${NC}"
 echo -e "  ${CYAN}•${NC} Install ${BOLD}StretchPro${NC} font (used by hyprlock clock):"
-echo    "    Download from: https://fontsource.org/fonts/stretch-pro"
-echo    "    Then run: mkdir -p ~/.local/share/fonts && cp StretchPro*.ttf ~/.local/share/fonts/ && fc-cache -fv"
+echo    "    1. Download from: https://fontsource.org/fonts/stretch-pro"
+echo    "    2. Open the .ttf file with GNOME Font Viewer (already installed) and click Install"
+echo    "       Or manually: cp StretchPro*.ttf ~/.local/share/fonts/ && fc-cache -fv"
 echo ""

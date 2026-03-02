@@ -74,7 +74,7 @@ chmod +x install.sh
 
 The installer will handle package installation, symlinking, permissions, and generating initial pywal colors automatically. Existing configs will be **backed up** before being overwritten.
 
-> **Note:** The `StretchPro` font used by hyprlock cannot be installed via yay. The installer will remind you with download instructions at the end.
+> **Note:** The `StretchPro` font used by hyprlock cannot be installed via yay. Download it from [fontsource](https://fontsource.org/fonts/stretch-pro), then open the `.ttf` with **GNOME Font Viewer** (installed automatically) and click **Install**.
 
 ---
 
@@ -89,10 +89,11 @@ yay -S hyprland waybar kitty rofi swaync wlogout hyprlock hypridle \
                waypaper python-pywal16 cava fastfetch starship fzf yazi zoxide fd bc power-profiles-daemon \
                swww ttf-jetbrains-mono-nerd bibata-cursor-theme \
                ttf-roboto ttf-roboto-mono-nerd ttf-nerd-fonts-symbols \
-               apple-fonts ttf-minecraft monocraft
+               otf-apple-sf-pro-fixed minecraft-ttf-git \
+               gnome-font-viewer nwg-displays nwg-look
 ```
 
-> **Note:** The hyprlock clock uses the `StretchPro` font which is not available in AUR. Download and install it manually from [fontsource](https://fontsource.org/fonts/stretch-pro) or a font site of your choice, then place it in `~/.local/share/fonts/` and run `fc-cache -fv`.
+> **Note:** The hyprlock clock uses the `StretchPro` font which is not available in AUR. Download it from [fontsource](https://fontsource.org/fonts/stretch-pro), then open the `.ttf` with **GNOME Font Viewer** (already installed above) and click **Install**. Or manually place it in `~/.local/share/fonts/` and run `fc-cache -fv`.
 
 #### Setup
 
@@ -162,6 +163,12 @@ Edit `hypr/monitors.conf` to configure your display setup:
 ```conf
 monitor=eDP-1,1920x1080@60,0x0,1
 ```
+
+Use `nwg-displays` for a GUI to configure monitors and generate the config automatically.
+
+### GTK Theme & Icons
+
+Use `nwg-look` to configure GTK theme, icon pack, fonts, and cursor for Wayland apps.
 
 ### Keybindings
 
