@@ -98,7 +98,13 @@ chmod +x ~/dotfiles/swaync/scripts/*
 chmod +x ~/dotfiles/waybar/scripts/*
 ```
 
-5. **Reload Hyprland**
+5. **Generate initial pywal colors** (required before first launch)
+```bash
+wal -i ~/dotfiles/mybgs/jeff-ostberg-cozy-autumn-rain.jpg
+```
+> This generates `~/.cache/wal/colors-hyprland.conf` which Hyprland sources on startup. Without this step, colors will fail to parse on first launch.
+
+6. **Reload Hyprland**
 Press `Super + Shift + R` or restart Hyprland
 
 ## 🎨 Customization
