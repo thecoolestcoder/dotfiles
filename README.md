@@ -45,13 +45,42 @@ My personal Hyprland configuration files for Arch Linux. A carefully crafted set
 ├── waypaper/      # Wallpaper manager config
 ├── wlogout/       # Logout menu config
 ├── yazi/          # Yazi Terminal File Browser  
+├── install.sh     # Automated installer
 └── starship.toml  # Shell prompt config
 └── .bashrc        # Bash shell configuration
 ```
 
 ## 🚀 Installation
 
-### Prerequisites
+### ⚡ Quick Install (Recommended)
+
+Clone the repo and run the installer:
+
+```bash
+git clone https://github.com/thecoolestcoder/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+chmod +x install.sh
+```
+
+**Interactive mode** (asks before each step):
+```bash
+./install.sh
+```
+
+**Non-interactive mode** (auto-confirms everything):
+```bash
+./install.sh --yes
+```
+
+The installer will handle package installation, symlinking, permissions, and generating initial pywal colors automatically. Existing configs will be **backed up** before being overwritten.
+
+> **Note:** The `StretchPro` font used by hyprlock cannot be installed via yay. The installer will remind you with download instructions at the end.
+
+---
+
+### 🔧 Manual Install
+
+#### Prerequisites
 
 Ensure you have these packages installed:
 
@@ -65,7 +94,7 @@ yay -S hyprland waybar kitty rofi swaync wlogout hyprlock hypridle \
 
 > **Note:** The hyprlock clock uses the `StretchPro` font which is not available in AUR. Download and install it manually from [fontsource](https://fontsource.org/fonts/stretch-pro) or a font site of your choice, then place it in `~/.local/share/fonts/` and run `fc-cache -fv`.
 
-### Setup
+#### Setup
 
 1. **Clone the repository**
 ```bash
