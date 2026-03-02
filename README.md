@@ -58,8 +58,12 @@ Ensure you have these packages installed:
 ```bash
 yay -S hyprland waybar kitty rofi swaync wlogout hyprlock hypridle \
                waypaper python-pywal16 cava fastfetch starship fzf yazi zoxide fd bc power-profiles-daemon \
-               swww ttf-jetbrains-mono-nerd bibata-cursor-theme
+               swww ttf-jetbrains-mono-nerd bibata-cursor-theme \
+               ttf-roboto ttf-roboto-mono-nerd ttf-nerd-fonts-symbols \
+               apple-fonts ttf-minecraft monocraft
 ```
+
+> **Note:** The hyprlock clock uses the `StretchPro` font which is not available in AUR. Download and install it manually from [fontsource](https://fontsource.org/fonts/stretch-pro) or a font site of your choice, then place it in `~/.local/share/fonts/` and run `fc-cache -fv`.
 
 ### Setup
 
