@@ -57,7 +57,8 @@ Ensure you have these packages installed:
 
 ```bash
 yay -S hyprland waybar kitty rofi swaync wlogout hyprlock hypridle \
-               waypaper python-pywal16 cava fastfetch starship fzf yazi zoxide fd bc power-profiles-daemon
+               waypaper python-pywal16 cava fastfetch starship fzf yazi zoxide fd bc power-profiles-daemon \
+               swww ttf-jetbrains-mono-nerd bibata-cursor-theme
 ```
 
 ### Setup
@@ -96,13 +97,14 @@ ln -sf ~/dotfiles/.bashrc ~/.bashrc
 chmod +x ~/dotfiles/hypr/scripts/*
 chmod +x ~/dotfiles/swaync/scripts/*
 chmod +x ~/dotfiles/waybar/scripts/*
+chmod +x ~/dotfiles/rofi/*.sh
 ```
 
 5. **Generate initial pywal colors** (required before first launch)
 ```bash
 wal -i ~/dotfiles/mybgs/jeff-ostberg-cozy-autumn-rain.jpg
 ```
-> This generates `~/.cache/wal/colors-hyprland.conf` which Hyprland sources on startup. Without this step, colors will fail to parse on first launch.
+> This generates `~/.cache/wal/colors-hyprland.conf` and `~/.cache/wal/colors-rofi-dark.rasi` which are sourced on startup. Without this step, colors will fail to parse and the rofi theme will not apply on first launch.
 
 6. **Reload Hyprland**
 Press `Super + Shift + R` or restart Hyprland
