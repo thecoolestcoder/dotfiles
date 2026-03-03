@@ -242,10 +242,10 @@
 [color]
 gradient = 1
 gradient_count = 4
-gradient_color_1 = '#4F626A'
-gradient_color_2 = '#AF5F47'
-gradient_color_3 = '#5C7A85'
-gradient_color_4 = '#969EA1'
+gradient_color_1 = '#333B82'
+gradient_color_2 = '#4D3C85'
+gradient_color_3 = '#3A4085'
+gradient_color_4 = '#9C528D'
 # Colors can be one of seven predefined: black, blue, cyan, green, magenta, red, white, yellow.
 # Or defined by hex code '#xxxxxx' (hex code must be within ''). User defined colors requires
 # a terminal that can change color definitions such as Gnome-terminal or rxvt.

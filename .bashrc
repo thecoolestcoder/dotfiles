@@ -54,8 +54,8 @@ alias fom='fzf | xargs -I {} micro "{}"'
 # Optional: Source the colors.sh file if you want to use 
 # pywal variables ($color0, $color1, etc.) in other scripts
 source "$HOME/.cache/wal/colors.sh"
-export VISUAL="micro"
-export EDITOR="micro"
+export VISUAL="nvim"
+export EDITOR="nvim"
 
 alias xfce='startxfce4'
 alias hypr='start-hyprland'
@@ -64,7 +64,7 @@ export MOZ_ENABLE_WAYLAND=1
 export SWWW_TRANSITION=any
 export SWWW_TRANSITION_FPS=60
 export SWWW_TRANSITION_STEP=63
-alias hpush='cd ~/.config && git add . && git commit -m "update dotfiles" && git push'
+alias hpush='cd ~/dotfiles && git add . && git commit -m "update dotfiles" && git push'
 
 # Custom Zoxide + fzf + bat preview
 zp() {
