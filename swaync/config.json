@@ -52,26 +52,26 @@
     "backlight": {
       "label": "󰃠"
     },
-  "buttons-grid": {
-    "buttons-per-row": 3,
-    "actions": [
-      {
-		"label": "󱡺 󰦑󰦑 ",      
-        "type": "toggle",
-        "command": "/home/coolboi/.config/swaync/scripts/airplane_mode.sh",
-        "update-command": "sh -c 'if nmcli radio wifi | grep -q \"enabled\"; then echo \"{\\\"label\\\": \\\" \\\", \\\"active\\\": false}\"; else echo \"{\\\"label\\\": \\\"󰑐\\\", \\\"active\\\": true}\"; fi'"
-      },
-      {
-        "label": "󰊖",
-        "type": "toggle",
-        "command": "/home/coolboi/.config/swaync/scripts/toggle-gamemode.sh",
-        "update-command": "sh -c '[ -f /home/coolboi/.config/swaync/scripts/.gamemode_active ] && echo true || echo false'"
-      },
-      {
-        "label": "",
-        "command": "wlogout -b 5"
-      }
-    ]
-  }
+    "buttons-grid": {
+      "buttons-per-row": 3,
+      "actions": [
+        {
+          "label": "",
+          "type": "toggle",
+          "command": "/home/coolboi/.config/swaync/scripts/caffeine.sh",
+          "update-command": "sh -c '[ -f /home/coolboi/.config/swaync/scripts/.caffeine_active ] && echo true || echo false'"
+        },
+        {
+          "label": "󰊖",
+          "type": "toggle",
+          "command": "/home/coolboi/.config/swaync/scripts/toggle-gamemode.sh",
+          "update-command": "sh -c '[ -f /home/coolboi/.config/swaync/scripts/.gamemode_active ] && echo true || echo false'"
+        },
+        {
+          "label": "󰐥",
+          "command": "wlogout -b 5"
+        }
+      ]
+    }
   }
 }
