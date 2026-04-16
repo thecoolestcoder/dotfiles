@@ -16,6 +16,7 @@ alias imneo='cmatrix -a'
 alias fx='yazi'
 alias cd='z'
 alias dd3='ddgr -n 3'
+alias gemma4='ollama run gemma4:e2b'
 alias nv='nvim'
 eval "$(zoxide init bash)"
 eval "$(starship init bash)"
