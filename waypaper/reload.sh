@@ -11,11 +11,10 @@ rm -f "$HOME/.cache/current_wallpaper"
 cp "$1" "$HOME/.cache/current_wallpaper"
 
 # 4. Apply wallpaper with grow transition explicitly
-swww img "$1" \
+awww img "$1" \
   --transition-type any \
-  --transition-step 63 \
   --transition-duration 2 \
-  --transition-fps 60 \
+  --transition-fps 90 \
   --transition-angle 0
 
 # 5. Reload Waybar

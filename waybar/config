@@ -73,7 +73,7 @@
         "bluetooth": {
             "format": " 󰂯 ",
             "format-connected": " 󰂱 ",
-            "on-click": "~/.config/waybar/scripts/rofi-bluetooth.sh",
+            "on-click": "overskride",
             "tooltip-format": "{status}"
         },
 
