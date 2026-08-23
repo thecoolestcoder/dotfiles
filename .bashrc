@@ -15,6 +15,7 @@ alias ff='fastfetch'
 alias imneo='cmatrix -a'
 alias fx='yazi'
 alias cd='z'
+alias k='kate'
 alias dd3='ddgr -n 3'
 alias gemma4='ollama run gemma4:e2b'
 alias nv='nvim'
@@ -22,6 +23,13 @@ eval "$(zoxide init bash)"
 eval "$(starship init bash)"
 # fzf key bindings
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+imvsort() {
+    # If no path is given, use the current folder (.)
+    local target="${1:-.}"
+    
+    # Run imv using naturally sorted files from that folder
+    imv "$target" $(ls -1 "$target" | sort -V)
+}
 
 # Fixed aesthetic fzf defaults
 export FZF_DEFAULT_OPTS='--height 80% --layout=reverse --border=rounded --margin=1%,1% --padding=1 --info=inline --header="⌕ " --prompt="❯ " --pointer="▶" --marker="✗" --color=light --color="border:7,label:3,pointer:5,marker:5,spinner:5,hl:2,hl+:3" --preview-window="right:60%:border-rounded:nocycle:wrap" --preview "bat --style=numbers --color=always --line-range :100 {} 2>/dev/null || cat {} 2>/dev/null || ls -la {} 2>/dev/null"'
@@ -55,8 +63,6 @@ alias fom='fzf | xargs -I {} micro "{}"'
 # Optional: Source the colors.sh file if you want to use 
 # pywal variables ($color0, $color1, etc.) in other scripts
 source "$HOME/.cache/wal/colors.sh"
-export VISUAL="nvim"
-export EDITOR="nvim"
 
 alias xfce='startxfce4'
 alias hypr='start-hyprland'
@@ -87,3 +93,11 @@ function y() {
 
 # opencode
 export PATH=/home/coolboi/.opencode/bin:$PATH
+# Download a full YT Music playlist (~1.5MB per song)
+alias ytm-list='ytm_list_dl() { yt-dlp "$1" -x --audio-format mp3 --audio-quality 96K -f bestaudio --embed-thumbnail --add-metadata --embed-metadata --parse-metadata "playlist_index:%(track_number)s" -o "%(title)s.%(ext)s"; }; ytm_list_dl'
+
+# Download an individual YT Music song (~1.5MB total)
+alias ytm-song='ytm_song_dl() { yt-dlp "$1" -x --audio-format mp3 --audio-quality 96K -f bestaudio --embed-thumbnail --add-metadata --embed-metadata -o "%(title)s.%(ext)s"; }; ytm_song_dl'
+
+# Created by `pipx` on 2026-08-23 01:41:42
+export PATH="$PATH:/home/coolboi/.local/bin"

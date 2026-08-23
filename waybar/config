@@ -55,7 +55,7 @@
         "custom/media-next": { "format": "󰒭", "on-click": "playerctl next" },
 
 		"pulseaudio": {
-		    "format": " {icon} {volume}% ",
+		    "format": "{icon} {volume}%",
 		    "format-muted": "󰖁",
 		    "format-icons": {
 		        "headphone": "󰋋",
@@ -64,10 +64,15 @@
 		        "phone": "󰄜",
 		        "portable": "󰄜",
 		        "car": "󰄋",
-		        "default": ["󰖁", "󰖀", "󰕾"]
+		        "speaker": "󰓃",
+		        "hdmi": "󰡁",
+		        "default": ["󰕿", "󰖀", "󰕾"]
 		    },
+		    "scroll-step": 5,
 		    "on-click": "pavucontrol",
-		    "tooltip-format": "{desc}"
+		    "tooltip-format": "{desc} | {volume}%",
+		    "format-source": "󰍬 {volume}%",
+		    "format-source-muted": "󰍭 muted"
 		},
 
         "bluetooth": {

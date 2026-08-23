@@ -27,3 +27,6 @@ current_per=$(brightnessctl -m | cut -d, -f4 | tr -d '%')
 notify-send -h string:x-canonical-private-synchronous:bright-notify \
             -u low -i display-brightness "Brightness: ${current_per}%" \
             -h int:value:"$current_per"
+
+
+
