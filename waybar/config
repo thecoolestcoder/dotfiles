@@ -117,7 +117,12 @@
             "on-click-right": "cliphist wipe"
         },
 
-        "hyprland/workspaces": { "format": "{icon}" },
+"hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "hyprctl dispatch workspace {name}",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
+},
         "hyprland/window": { "format": "{title}", "max-length": 30 },
         "custom/nightmode": { 
             "format": " 󱩌 ", 
